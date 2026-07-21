@@ -1,0 +1,174 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 0,
+    "mode": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "reload_style_on_change": true,
+    "modules-left": [
+        "custom/icon",
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "clock",
+        "power-profiles-daemon"
+    ],
+    "modules-right": [
+        "tray",
+        "battery",
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        "sway/language",
+        "group/power"
+    ],
+    "custom/icon": {
+        "format": "󰣇",
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "format": "{index}",
+    },
+    "clock": {
+        "format": "{:%H:%M - %A %d.%m.%Y}",
+        "interval": 1,
+        "rotate": 0,
+        "tooltip-format": "{calendar}",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 4,
+            "first-day-of-week": 1,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<b>{}</b>",
+                "weekdays": "{}",
+                "today": "<span foreground=\"#fe640b\"><b>{}</b></span>",
+                "days": "{}"
+            }
+        }
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+    "pulseaudio": {
+        "format": "{icon} ",
+        "tooltip": false,
+        "format-muted": " ",
+        "on-click": "ghostty -e pamix",
+        "on-click-right": "~/.config/waybar/audio.sh",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": "",
+        "format-disabled": "",
+        "format-connected": " {num_connections} connected",
+        "on-click": "blueman-applet",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "tooltip": true,
+        "tooltip-format": "{power}W",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "󰂃",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "network": {
+        "tooltip": true,
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "ghostty -e nmtui",
+        "interval": 2
+    },
+    "sway/language": {
+        "format": "{}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    },
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 100,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power",
+            "custom/lock",
+            "custom/sleep",
+            "custom/reboot",
+        ]
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "swaylock -f -K -c 282828 --indicator-idle-visible --inside-color 282829 -n --ring-color d4d4d4"
+    },
+    "custom/sleep": {
+        "format": "󰤄",
+        "tooltip": false,
+        "on-click": "systemctl suspend"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "systemctl reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "systemctl poweroff"
+    }
+}

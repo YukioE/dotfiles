@@ -1,0 +1,27 @@
+@define-color foreground #d4d4d4;
+@define-color background #282828;
+@define-color accent #fe640b;
+
+* {
+    all: unset;
+    border-radius: 0px;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 15px;
+    padding: 1px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#waybar {
+    color: @foreground;
+    background-color: @background;
+}
+
+#workspaces button.focused {
+    box-shadow: inset 0 0 0 1px @foreground;
+}
+
+tooltip {
+    background-color: @background;
+    border: 2px solid @foreground;
+}
