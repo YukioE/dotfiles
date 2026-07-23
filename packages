@@ -5,6 +5,7 @@ fastfetch
 firefox
 git
 grim
+slurp
 btop
 kdeconnect
 keepassxc
@@ -41,14 +42,14 @@ firefox-ublock-origin
 firefox-extension-sponsorblock
 cliphist
 imagemagick
-pamix-git
-nmtui
+wiremix
+wifitui-bin
 ttf-jetbrains-mono-nerd
 zsh
-blueman
+bluetuith-bin
 imv
 noto-fonts-emoji
-swaylock
+hyprlock
 swayidle
 wob
 man-db
