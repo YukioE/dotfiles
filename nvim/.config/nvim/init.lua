@@ -5,6 +5,7 @@ require("options")
 require("keymaps")
 require("autocmds")
 require("lsp")
+require("colorscheme")
 
 require("plugins.oil")
 require("plugins.which-key")
