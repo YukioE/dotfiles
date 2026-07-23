@@ -22,10 +22,11 @@
         "network",
         "pulseaudio",
         "sway/language",
-        "group/power"
+        "custom/power"
     ],
     "custom/icon": {
         "format": "󰣇",
+        "on-click": "rofi -show drun -theme ~/.config/rofi/style.rasi"
     },
     "sway/workspaces": {
         "disable-scroll": true,
@@ -46,7 +47,7 @@
             "format": {
                 "months": "<b>{}</b>",
                 "weekdays": "{}",
-                "today": "<span foreground=\"#fe640b\"><b>{}</b></span>",
+                "today": "<span background=\"#d4d4d4\" foreground=\"#282828\"><b>{}</b></span>",
                 "days": "{}"
             }
         }
@@ -61,14 +62,13 @@
       }
     },
     "tray": {
-        "icon-size": 14,
-        "spacing": 10
+        "spacing": 0,
     },
     "pulseaudio": {
-        "format": "{icon} ",
+        "format": "vol {volume}%",
         "tooltip": false,
-        "format-muted": " ",
-        "on-click": "ghostty -e pamix",
+        "format-muted": "vol muted",
+        "on-click": "ghostty -e wiremix",
         "on-click-right": "~/.config/waybar/audio.sh",
         "scroll-step": 5,
         "format-icons": {
@@ -87,11 +87,11 @@
         }
     },
     "bluetooth": {
-        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-        "format": "",
+        "format": "bt",
         "format-disabled": "",
-        "format-connected": " {num_connections} connected",
-        "on-click": "blueman-applet",
+        "format-connected": "bt {device_alias} connected",
+        "format-no-controller": "",
+        "on-click": "ghostty -e bluetuith",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
@@ -102,12 +102,15 @@
             "warning": 30,
             "critical": 20
         },
-        "tooltip": true,
-        "tooltip-format": "{power}W",
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "full-at": 80,
+        "interval": 5,
+        "format": "bat {capacity}%",
+        // "format-charging": "BAT {capacity}%",
+        // "format-plugged": "BAT {capacity}%",
         "format-alt": "{time} {icon}",
+        "tooltip": true,
+        "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
         "format-icons": [
             "󰂃",
             "󰁺",
@@ -124,51 +127,22 @@
     },
     "network": {
         "tooltip": true,
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀 ",
+        "format-wifi": "wifi {essid}",
+        "format-ethernet": "eth",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "ghostty -e nmtui",
+        "format-linked": "eth {ifname} (no ip)",
+        "format-disconnected": "wifi disconnected",
+        "tooltip-format-disconnected": "disconnected",
+        "on-click": "ghostty -e wifitui",
         "interval": 2
     },
     "sway/language": {
-        "format": "{}",
+        "format": "{shortDescription}",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
-    },
-    "group/power": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 100,
-            "children-class": "not-power",
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "custom/power",
-            "custom/lock",
-            "custom/sleep",
-            "custom/reboot",
-        ]
-    },
-    "custom/lock": {
-        "format": "󰍁",
-        "tooltip": false,
-        "on-click": "swaylock -f -K -c 282828 --indicator-idle-visible --inside-color 282829 -n --ring-color d4d4d4"
-    },
-    "custom/sleep": {
-        "format": "󰤄",
-        "tooltip": false,
-        "on-click": "systemctl suspend"
-    },
-    "custom/reboot": {
-        "format": "󰜉",
-        "tooltip": false,
-        "on-click": "systemctl reboot"
     },
     "custom/power": {
         "format": "",
         "tooltip": false,
-        "on-click": "systemctl poweroff"
+        "on-click": "~/.config/waybar/powermenu.sh"
     }
 }

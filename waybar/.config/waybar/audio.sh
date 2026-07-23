@@ -2,7 +2,9 @@
 
 choice=$(
     pactl list short sinks |
-    rofi -dmenu -i -p "Audio Output"
+    rofi -dmenu -i -p "" \
+        -theme ~/.config/rofi/style-powermenu.rasi \
+        -theme-str 'window { width: 800px; }'
 ) || exit 0
 
 sink=$(printf '%s\n' "$choice" | awk '{print $2}')
