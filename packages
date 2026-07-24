@@ -1,6 +1,6 @@
 discord
 vesktop-bin
-dolphin
+thunar
 fastfetch
 firefox
 git
@@ -53,3 +53,13 @@ hyprlock
 swayidle
 wob
 man-db
+nwg-look
+qt6ct
+qt5ct
+xdg-desktop-portal-wlr
+themix-full-git
+nmap
+lynx
+power-profiles-daemon
+wl-copy
+nvidia-utils
