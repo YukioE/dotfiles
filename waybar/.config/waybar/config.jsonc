@@ -16,7 +16,7 @@
         "power-profiles-daemon"
     ],
     "modules-right": [
-        "tray",
+        "group/tray-drawer",
         "battery",
         "bluetooth",
         "network",
@@ -60,6 +60,20 @@
         "balanced": "",
         "power-saver": ""
       }
+    },
+    "group/tray-drawer": {
+        "orientation": "horizontal",
+        "drawer": {
+          "transition-duration": 50,
+        },
+        "modules": [
+          "custom/expand",
+          "tray"
+        ]
+    },
+    "custom/expand": {
+        "format": "❮",
+        "tooltip": false
     },
     "tray": {
         "spacing": 0,

@@ -31,7 +31,9 @@ exec discord
 exec spotify
 exec firefox
 exec obsidian
+exec steam
 
+exec tailscale up && tailscale systray
 exec syncthing --no-browser
 exec cliphist wipe
 exec wl-paste --type text --watch cliphist store

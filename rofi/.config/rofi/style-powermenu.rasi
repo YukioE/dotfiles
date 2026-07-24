@@ -1,7 +1,7 @@
 @import "style.rasi"
 
 window {
-    width:  400px;
+    width:  200;
 }
 
 listview {
