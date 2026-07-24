@@ -10,6 +10,10 @@
     margin: 0 4px;
 }
 
+#waybar {
+    box-shadow: inset 0 0 0 1 @foreground;
+}
+
 #waybar, tooltip, #tray menu {
     color: @foreground;
     background-color: @background;
@@ -17,7 +21,7 @@
 
 
 tooltip, #tray menu {
-    border: 2px solid @foreground;
+    border: 1px solid @foreground;
 }
 
 tooltip *,
@@ -26,7 +30,8 @@ tooltip *,
 }
 
 #workspaces button.focused {
-    box-shadow: inset 0 0 0 1px @foreground;
+    background-color: @foreground;
+    color: @background;
 }
 
 #tray menu > menuitem:hover {
