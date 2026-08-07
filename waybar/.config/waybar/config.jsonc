@@ -13,7 +13,6 @@
     ],
     "modules-center": [
         "clock",
-        "power-profiles-daemon"
     ],
     "modules-right": [
         "group/tray-drawer",
@@ -51,15 +50,6 @@
                 "days": "{}"
             }
         }
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
     },
     "group/tray-drawer": {
         "orientation": "horizontal",
@@ -121,10 +111,8 @@
         "format": "bat {capacity}%",
         // "format-charging": "BAT {capacity}%",
         // "format-plugged": "BAT {capacity}%",
-        "format-alt": "{time} {icon}",
         "tooltip": true,
-        "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
-        "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+        "tooltip-format": "{timeTo} | {power:>1.0f}W",
         "format-icons": [
             "󰂃",
             "󰁺",
