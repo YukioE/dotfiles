@@ -32,6 +32,7 @@ exec spotify
 exec firefox
 exec obsidian
 exec steam
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec tailscale up && tailscale systray
 exec syncthing --no-browser
@@ -55,6 +56,8 @@ input type:keyboard {
 	xkb_layout "us,de"
 	xkb_options "caps:escape"
 }
+
+bindsym $mod+Shift+space input type:keyboard xkb_switch_layout next
 
 input type:pointer {
 	accel_profile flat
