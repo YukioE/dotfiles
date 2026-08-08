@@ -82,6 +82,7 @@ bindsym $mod+Shift+q exec ~/.config/waybar/powermenu.sh
 bindsym $mod+Shift+v exec cliphist list | rofi -dmenu -p "" -theme ~/.config/rofi/style-clipboard.rasi | cliphist decode | wl-copy
 
 bindsym $mod+Shift+s exec ~/.config/sway/screenshot.sh
+bindgesture pinch:inward exec ~/.config/sway/screenshot.sh
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -103,6 +104,9 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
 
 bindsym $mod+Shift+1 move container to workspace number 1; workspace 1
 bindsym $mod+Shift+2 move container to workspace number 2; workspace 2
