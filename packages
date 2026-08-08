@@ -29,7 +29,6 @@ nvidia-utils
 nwg-look
 obsidian
 pipewire
-power-profiles-daemon
 qt5ct
 qt6ct
 rclone
@@ -65,3 +64,6 @@ ttf-atkinson-hyperlegible
 mako
 gvfs
 thunar-volman
+tlp
+mullvad-vpn
+qbittorrent
