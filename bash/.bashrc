@@ -13,3 +13,4 @@ alias ff='fastfetch'
 PS1='[\u@\h \W]\$ '
 
 ff
+bind 'set completion-ignore-case on'
