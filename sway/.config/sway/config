@@ -57,7 +57,7 @@ input type:keyboard {
 	xkb_options "caps:escape"
 }
 
-bindsym $mod+Shift+space input type:keyboard xkb_switch_layout next
+bindsym $mod+Shift+space exec swaymsg 'input type:keyboard xkb_switch_layout next' && notify-send -t 1000 -a 'keyboard' -h string:x-canonical-private-synchronous:keyboard "Keyboard layout changed"
 
 input type:pointer {
 	accel_profile flat
