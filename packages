@@ -4,10 +4,12 @@ cliphist
 discord
 easyroam
 fastfetch
+fd
 firefox
 ghostty
 git
 grim
+gvfs
 hyprlock
 imagemagick
 imv
@@ -18,7 +20,9 @@ less
 libreoffice-fresh
 ludusavi-bin
 lynx
+mako
 man-db
+mullvad-vpn
 nano
 ncdu
 neovim-nightly-bin
@@ -29,6 +33,7 @@ nvidia-utils
 nwg-look
 obsidian
 pipewire
+qbittorrent
 qt5ct
 qt6ct
 rclone
@@ -44,9 +49,13 @@ tailscale
 teamspeak3
 themix-full-git
 thunar
+thunar-volman
 timeshift
+tlp
 tree
+ttf-atkinson-hyperlegible
 ttf-jetbrains-mono-nerd
+tumbler
 vesktop-bin
 via-bin
 vlc
@@ -60,10 +69,3 @@ wob
 xdg-desktop-portal-wlr
 yazi
 zsh
-ttf-atkinson-hyperlegible
-mako
-gvfs
-thunar-volman
-tlp
-mullvad-vpn
-qbittorrent
