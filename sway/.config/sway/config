@@ -25,7 +25,7 @@ smart_borders no_gaps
 smart_gaps on
 gaps inner 5
 
-client.focused $accent $background $accent $foreground $accent
+client.focused $accent $background $foreground $foreground $accent
 
 exec discord
 exec spotify
