@@ -164,6 +164,7 @@ for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set width 
 for_window [app_id="com.mitchellh.ghostty" title="wiremix"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 70ppt 0ppt
 for_window [app_id="com.mitchellh.ghostty" title="wifitui"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 70ppt 0ppt
 for_window [app_id="com.mitchellh.ghostty" title="bluetuith"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 70ppt 0ppt
+for_window [class="steam_app*"] inhibit_idle focus
 
 assign [app_id="spotify"] workspace 10
 assign [app_id="discord"] workspace 2
