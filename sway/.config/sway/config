@@ -13,7 +13,7 @@ set $background #282828
 set $foreground #d4d4d4
 set $accent #fe640b
 
-output "Ancor Communications Inc ASUS PB277 0x0000F421" mode 2560x1440 pos 0 870 allow_tearing yes
+output "Ancor Communications Inc ASUS PB277 0x0000F421" mode 2560x1440 pos 0 1015 allow_tearing yes
 output "Ancor Communications Inc ASUS PB277 0x0003C51C" mode 2560x1440 pos 2560 0 transform 270 allow_tearing yes
 
 output * bg #282828 solid_color
