@@ -83,7 +83,6 @@ bindsym $mod+Shift+q exec ~/.config/waybar/powermenu.sh
 bindsym $mod+Shift+v exec cliphist list | rofi -dmenu -p "" -theme ~/.config/rofi/style-clipboard.rasi | cliphist decode | wl-copy
 
 bindsym $mod+Shift+s exec ~/.config/sway/screenshot.sh
-bindgesture pinch:inward exec ~/.config/sway/screenshot.sh
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
