@@ -13,7 +13,6 @@ require("plugins.telescope")
 require("plugins.blink")
 require("plugins.autopairs")
 require("plugins.autotags")
-require("plugins.treesitter")
 require("plugins.lualine")
 require("plugins.gitsigns")
 
