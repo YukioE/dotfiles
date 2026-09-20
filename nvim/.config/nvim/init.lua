@@ -5,7 +5,7 @@ require("options")
 require("keymaps")
 require("autocmds")
 require("lsp")
-require("colorscheme")
+vim.cmd("colorscheme habamax")
 
 require("plugins.oil")
 require("plugins.which-key")
