@@ -13,7 +13,12 @@ echo "[*] Updating mirrorlist..."
 sudo pacman -Sy --noconfirm pacman-contrib
 sudo rankmirrors -n 5 /etc/pacman.d/mirrorlist > /tmp/mirrorlist
 sudo mv /tmp/mirrorlist /etc/pacman.d/mirrorlist
-sudo pacman -Syyu --noconfirm
+if (($# == 0)); then
+  echo "[*] Upgrading system packages..."
+  sudo pacman -Syyu --noconfirm
+else
+  echo "[*] Skipping system upgrade..."
+fi
 
 # 4. Install yay-bin if not installed
 if ! command -v yay &>/dev/null; then
@@ -28,9 +33,13 @@ if ! command -v yay &>/dev/null; then
 fi
 
 # 5. Install all packages from list
-if [ -f "packages" ]; then
-  echo "[*] Installing packages from list..."
-  yay -S --needed --noconfirm - < packages
+if (($# == 0)); then
+  if [ -f "packages" ]; then
+    echo "[*] Installing packages from list..."
+    yay -S --needed --noconfirm - < packages
+  fi
+else
+  echo "[*] Skipping package installation..."
 fi
 
 # 6. Stow dotfiles
