@@ -8,7 +8,7 @@ case "$chosen" in
         hyprlock
         ;;
     "󰤄 sleep")
-        systemctl suspend
+        sleep 0.5 && systemctl suspend
         ;;
     "󰋓 exit sway")
         swaymsg exit
