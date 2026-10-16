@@ -34,6 +34,7 @@ exec obsidian
 exec steam
 exec keepassxc
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id sh -c 'while sleep 60; do ./bat-notif.sh; done'
 
 exec tailscale up && tailscale systray
 exec syncthing --no-browser
@@ -168,7 +169,7 @@ for_window [class="steam_app*"] inhibit_idle focus
 assign [app_id="spotify"] workspace 10
 assign [app_id="discord"] workspace 2
 assign [app_id="obsidian"] workspace 3
-assign [app_id="firefox"] workspace 3
+assign [app_id="firefox"] workspace 1
 assign [app_id="org.keepassxc.KeePassXC"] workspace 10
 
 include /etc/sway/config.d/*
