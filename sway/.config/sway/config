@@ -7,7 +7,6 @@ set $right l
 
 set $term ghostty
 set $menu rofi -show drun -theme ~/.config/rofi/style.rasi
-set $filem thunar
 
 set $background #282828
 set $foreground #d4d4d4
@@ -76,7 +75,6 @@ bindsym $mod+q kill
 
 bindsym $mod+Return exec $term
 bindsym $mod+r exec $menu
-bindsym $mod+e exec $filem
 
 floating_modifier $mod normal
 
@@ -161,9 +159,9 @@ bar {
 }
 
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set width 40ppt, resize set height 50ppt, move position center
-for_window [app_id="com.mitchellh.ghostty" title="wiremix"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 70ppt 0ppt
-for_window [app_id="com.mitchellh.ghostty" title="wifitui"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 70ppt 0ppt
-for_window [app_id="com.mitchellh.ghostty" title="bluetuith"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 70ppt 0ppt
+for_window [app_id="com.mitchellh.ghostty" title="wiremix"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 58ppt 1ppt
+for_window [app_id="com.mitchellh.ghostty" title="wifitui"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 58ppt 1ppt
+for_window [app_id="com.mitchellh.ghostty" title="bluetuith"] floating enable, resize set width 30ppt, resize set height 30ppt, move position 58ppt 1ppt
 for_window [class="steam_app*"] inhibit_idle focus
 
 assign [app_id="spotify"] workspace 10
