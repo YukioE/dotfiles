@@ -3,5 +3,5 @@ vim.pack.add({
 }, { confirm = false })
 
 require("silentium").setup({
-	accent = "#ef9f76",
+	accent = "#ff0070",
 })
