@@ -33,7 +33,6 @@ exec obsidian
 exec steam
 exec keepassxc
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id sh -c 'while sleep 60; do ./bat-notif.sh; done'
 
 exec tailscale up && tailscale systray
 exec syncthing --no-browser

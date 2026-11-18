@@ -38,3 +38,16 @@ tooltip *,
     background-color: @foreground;
     color: @background;
 }
+
+@keyframes battery-blink {
+    to {
+        color: transparent;
+    }
+}
+
+#battery.critical:not(.charging) {
+    animation-name: battery-blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(2);
+    animation-iteration-count: infinite;
+}
